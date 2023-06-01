@@ -26,7 +26,7 @@ def apply_to_self():
   return lambda element, func: element + func(element)
 
 def ap(fns,args):
-  return [fn(arg) for arg in args for fn in fns]
+  return [fn(arg) for fn, arg in zip(fns, args)]
 
 def map2(matrix,f):
   return [[f(element) for element in row] for row in matrix]
